@@ -48,7 +48,7 @@ class TaskTileState extends State<TaskTile> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     
     return Consumer<TaskController>(
       builder: (context, taskController, child) {
@@ -68,7 +68,7 @@ class TaskTileState extends State<TaskTile> {
                   backgroundColor: CupertinoColors.darkBackgroundGray,
                   foregroundColor: CupertinoColors.systemRed,
                   icon: CupertinoIcons.delete,
-                  label: localizations.delete,
+                  label: localizations?.delete ?? 'Delete',
                 ),
               ],
             ),
