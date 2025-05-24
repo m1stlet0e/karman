@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DeleteConfirmationDialog extends StatelessWidget {
   final String itemName;
@@ -12,12 +13,14 @@ class DeleteConfirmationDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return CupertinoAlertDialog(
-      title: Text('Delete $itemName?'),
-      content: Text('Are you sure you want to delete this $itemName? This action cannot be undone.'),
+      title: Text(localizations.deleteItemQuestion(itemName)),
+      content: Text(localizations.deleteItemWarning(itemName)),
       actions: [
         CupertinoDialogAction(
-          child: const Text('Cancel'),
+          child: Text(localizations.cancel),
           onPressed: () => Navigator.of(context).pop(),
         ),
         CupertinoDialogAction(
@@ -26,7 +29,7 @@ class DeleteConfirmationDialog extends StatelessWidget {
             onDelete();
             Navigator.of(context).pop();
           },
-          child: const Text('Delete'),
+          child: Text(localizations.delete),
         ),
       ],
     );

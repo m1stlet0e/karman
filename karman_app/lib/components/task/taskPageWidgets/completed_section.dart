@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:karman_app/models/task/task.dart';
 import 'package:karman_app/components/task/taskPageWidgets/task_tile.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CompletedSection extends StatelessWidget {
   final List<Task> tasks;
@@ -52,7 +53,7 @@ class CompletedSection extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'Completed',
+                  AppLocalizations.of(context)!.completed,
                   style: TextStyle(
                       color: CupertinoColors.white,
                       fontWeight: FontWeight.bold),

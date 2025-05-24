@@ -4,6 +4,7 @@ import 'package:karman_app/pages/habit/habits_page.dart';
 import 'package:karman_app/pages/task/tasks_page.dart';
 import 'package:karman_app/pages/focus/focus_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppShell extends StatefulWidget {
   static final GlobalKey<AppShellState> globalKey = GlobalKey<AppShellState>();
@@ -49,6 +50,8 @@ class AppShellState extends State<AppShell> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return CupertinoTabScaffold(
       controller: _controller,
       tabBar: CupertinoTabBar(
@@ -57,34 +60,34 @@ class AppShellState extends State<AppShell> {
         activeColor: CupertinoColors.white,
         height: 60,
         border: null,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Padding(
+            icon: const Padding(
               padding: EdgeInsets.only(top: 8),
               child: Icon(CupertinoIcons.repeat),
             ),
-            label: 'Habit',
+            label: localizations.habits,
           ),
           BottomNavigationBarItem(
-            icon: Padding(
+            icon: const Padding(
               padding: EdgeInsets.only(top: 8),
               child: Icon(CupertinoIcons.list_bullet),
             ),
-            label: 'Tasks',
+            label: localizations.tasks,
           ),
           BottomNavigationBarItem(
-            icon: Padding(
+            icon: const Padding(
               padding: EdgeInsets.only(top: 8),
               child: Icon(CupertinoIcons.hourglass),
             ),
-            label: 'Focus',
+            label: localizations.focus,
           ),
           BottomNavigationBarItem(
-            icon: Padding(
+            icon: const Padding(
               padding: EdgeInsets.only(top: 8),
               child: Icon(CupertinoIcons.square_grid_2x2),
             ),
-            label: 'More',
+            label: localizations.more,
           ),
         ],
       ),

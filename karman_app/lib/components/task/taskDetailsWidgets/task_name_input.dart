@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskNameInput extends StatelessWidget {
   final TextEditingController controller;
@@ -30,7 +31,7 @@ class TaskNameInput extends StatelessWidget {
               color: Colors.white,
               fontSize: 20,
             ),
-            placeholder: 'Task Name',
+            placeholder: AppLocalizations.of(context)!.taskName,
             placeholderStyle: TextStyle(
               color: CupertinoColors.systemGrey,
               fontSize: 20,
@@ -45,7 +46,7 @@ class TaskNameInput extends StatelessWidget {
           padding: EdgeInsets.zero,
           onPressed: onSave,
           child: Text(
-            'Save',
+            AppLocalizations.of(context)!.save,
             style: TextStyle(
               color: (hasChanges && !isTaskNameEmpty)
                   ? CupertinoColors.white

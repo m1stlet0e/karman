@@ -4,6 +4,7 @@ import 'package:karman_app/components/badges/achievement_overlay.dart';
 import 'package:karman_app/constants/focus_badge_constants.dart';
 import 'package:karman_app/controllers/focus_controller.dart';
 import 'package:karman_app/services/badges/focus_badge_service.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FocusBadgesPage extends StatefulWidget {
   const FocusBadgesPage({super.key});
@@ -83,7 +84,7 @@ class _FocusBadgesPageState extends State<FocusBadgesPage> {
           color: CupertinoColors.white,
           onPressed: () => Navigator.of(context).pop(),
         ),
-        middle: Text('Focus Badges'),
+        middle: Text(AppLocalizations.of(context)!.focusBadges),
       ),
       child: SafeArea(
         child: _isInitialLoad

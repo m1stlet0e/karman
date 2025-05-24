@@ -4,6 +4,7 @@ import 'package:karman_app/models/task/task.dart';
 import 'package:karman_app/components/task/taskPageWidgets/priority_section.dart';
 import 'package:karman_app/components/task/taskPageWidgets/completed_section.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskList extends StatelessWidget {
   final List<Task> tasks;
@@ -30,7 +31,7 @@ class TaskList extends StatelessWidget {
     return tasks.isEmpty
         ? Center(
             child: Text(
-              'This space craves your brilliant ideas. Add one!',
+              AppLocalizations.of(context)!.thisSpaceCravesIdeas,
               style: TextStyle(
                 fontSize: 18,
                 color: CupertinoColors.systemGrey,

@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:karman_app/controllers/habit_controller.dart';
 import 'package:karman_app/models/habits/habit.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitLogsPage extends StatelessWidget {
   final Habit habit;
@@ -20,7 +21,7 @@ class HabitLogsPage extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         middle: Text(
-          'Logs',
+          AppLocalizations.of(context)!.logs,
           style: TextStyle(color: CupertinoColors.white),
         ),
       ),
@@ -32,7 +33,7 @@ class HabitLogsPage extends StatelessWidget {
               return Center(child: CupertinoActivityIndicator());
             } else if (snapshot.hasError) {
               return Center(
-                  child: Text('Error: ${snapshot.error}',
+                  child: Text('${AppLocalizations.of(context)!.error}: ${snapshot.error}',
                       style: TextStyle(color: CupertinoColors.white)));
             }
 
@@ -45,7 +46,7 @@ class HabitLogsPage extends StatelessWidget {
 
                 if (nonEmptyLogs.isEmpty) {
                   return Center(
-                      child: Text('No logs available',
+                      child: Text(AppLocalizations.of(context)!.noLogsAvailable,
                           style: TextStyle(color: CupertinoColors.white)));
                 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:karman_app/app_shell.dart';
 import 'package:karman_app/controllers/habit_controller.dart';
 import 'package:karman_app/controllers/task_controller.dart';
@@ -11,6 +12,7 @@ import 'package:timezone/data/latest.dart' as tz;
 import 'package:karman_app/database/database_service.dart';
 import 'package:karman_app/app_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,6 +69,17 @@ class KarmanApp extends StatelessWidget {
       theme: const CupertinoThemeData(
         brightness: Brightness.dark,
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('zh'),
+      ],
+      locale: const Locale('zh'),
       home: showWelcome
           ? const WelcomeScreen()
           : AppShell(key: AppShell.globalKey, initialTabIndex: initialTabIndex),

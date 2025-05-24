@@ -4,13 +4,16 @@ import 'package:karman_app/pages/tutorial/task_tutorial.dart';
 import 'package:karman_app/pages/tutorial/focus_tutorial.dart';
 import 'package:karman_app/pages/tutorial/pomodoro_tutorial.dart';
 import 'package:karman_app/app_shell.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void showTutorialOptions(BuildContext context) {
+  final localizations = AppLocalizations.of(context)!;
+  
   showCupertinoModalPopup(
     context: context,
     builder: (BuildContext context) => CupertinoActionSheet(
       title: Text(
-        'Select a tutorial',
+        localizations.selectTutorial,
         style: TextStyle(
           color: CupertinoColors.white,
           fontSize: 18,
@@ -18,7 +21,7 @@ void showTutorialOptions(BuildContext context) {
         ),
       ),
       message: Text(
-        'Which tutorial would you like to revisit?',
+        localizations.whichTutorialRevisit,
         style: TextStyle(
           color: CupertinoColors.white,
           fontSize: 14,
@@ -27,29 +30,29 @@ void showTutorialOptions(BuildContext context) {
       actions: <Widget>[
         _buildTutorialOption(
           context,
-          'Tasks',
-          'Learn to manage your daily tasks',
+          localizations.tasks,
+          localizations.learnManageTasks,
           CupertinoIcons.list_bullet,
           () => _showSelectedTutorial(context, 'tasks'),
         ),
         _buildTutorialOption(
           context,
-          'Habits',
-          'Discover how to build lasting habits',
+          localizations.habits,
+          localizations.discoverBuildHabits,
           CupertinoIcons.repeat,
           () => _showSelectedTutorial(context, 'habits'),
         ),
         _buildTutorialOption(
           context,
-          'Focus',
-          'Master the art of concentration',
+          localizations.focus,
+          localizations.masterConcentration,
           CupertinoIcons.timer,
           () => _showSelectedTutorial(context, 'focus'),
         ),
         _buildTutorialOption(
           context,
-          'Pomodoro',
-          'Learn to use the Pomodoro technique',
+          localizations.pomodoroTimer,
+          localizations.learnPomodoroTechnique,
           CupertinoIcons.time,
           () => _showSelectedTutorial(context, 'pomodoro'),
         ),
@@ -59,7 +62,7 @@ void showTutorialOptions(BuildContext context) {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: Text('Cancel',
+        child: Text(localizations.cancel,
             style: TextStyle(color: CupertinoColors.destructiveRed)),
       ),
     ),

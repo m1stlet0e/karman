@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:karman_app/components/reminders/date_option.dart';
 import 'package:karman_app/components/reminders/task_reminder.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskOptionsSection extends StatelessWidget {
   final bool isDateEnabled;
@@ -26,6 +27,8 @@ class TaskOptionsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return Column(
       children: [
         DateOptionWidget(
@@ -33,8 +36,8 @@ class TaskOptionsSection extends StatelessWidget {
           date: dueDate,
           onToggle: onDateToggle,
           onDateSelected: onDateSelected,
-          title: 'Date',
-          placeholder: 'Due Date',
+          title: localizations.dueDate,
+          placeholder: localizations.dueDate,
         ),
         SizedBox(height: 20),
         TaskReminder(
@@ -42,8 +45,8 @@ class TaskOptionsSection extends StatelessWidget {
           dateTime: reminder ?? dueDate,
           onToggle: onReminderToggle,
           onDateTimeSelected: onReminderSet,
-          title: 'Reminder',
-          placeholder: 'Reminder',
+          title: localizations.reminder,
+          placeholder: localizations.reminder,
         ),
       ],
     );

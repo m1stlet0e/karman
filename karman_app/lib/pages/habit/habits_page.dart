@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 import 'package:karman_app/components/badges/achievement_overlay.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitsPage extends StatefulWidget {
   const HabitsPage({super.key});
@@ -141,6 +142,8 @@ class HabitsPageState extends State<HabitsPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return Consumer<HabitController>(
       builder: (context, habitController, child) {
         _listenForAchievements(habitController);
@@ -157,8 +160,8 @@ class HabitsPageState extends State<HabitsPage> with TickerProviderStateMixin {
                   padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
                   child: Text(
                     sortedHabits.isEmpty
-                        ? 'No habits left'
-                        : '$incompleteHabits habit${incompleteHabits == 1 ? '' : 's'} left',
+                        ? localizations.noHabitsLeft
+                        : localizations.habitsLeft(incompleteHabits),
                     style: TextStyle(
                       color: CupertinoColors.white,
                       fontWeight: FontWeight.bold,
@@ -217,9 +220,10 @@ class HabitsPageState extends State<HabitsPage> with TickerProviderStateMixin {
   }
 
   Widget _buildEmptyState() {
+    final localizations = AppLocalizations.of(context)!;
     return Center(
       child: Text(
-        'No habits yet. Add one to get started!',
+        localizations.noHabitsYet,
         style: TextStyle(
           fontSize: 18,
           color: CupertinoColors.systemGrey,

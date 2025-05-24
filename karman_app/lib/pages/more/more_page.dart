@@ -5,12 +5,15 @@ import 'package:karman_app/pages/more/details/community_page.dart';
 import 'package:karman_app/pages/more/details/contribution_page.dart';
 import 'package:karman_app/pages/more/details/support_page.dart';
 import 'package:karman_app/pages/more/details/tutorial_selector.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MorePage extends StatelessWidget {
   const MorePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return CupertinoPageScaffold(
       backgroundColor: CupertinoColors.black,
       navigationBar: CupertinoNavigationBar(
@@ -21,7 +24,7 @@ class MorePage extends StatelessWidget {
           padding: EdgeInsets.all(16),
           children: [
             Text(
-              'Achievements',
+              localizations.achievements,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -34,7 +37,7 @@ class MorePage extends StatelessWidget {
                 Expanded(
                   child: _buildActionTile(
                     context,
-                    'Focus',
+                    localizations.focus,
                     'lib/assets/images/badges/focus_badge.png',
                     () => Navigator.push(
                       context,
@@ -48,7 +51,7 @@ class MorePage extends StatelessWidget {
                 Expanded(
                   child: _buildActionTile(
                     context,
-                    'Habits',
+                    localizations.habits,
                     'lib/assets/images/badges/habit_badge.png',
                     () => Navigator.push(
                       context,
@@ -62,7 +65,7 @@ class MorePage extends StatelessWidget {
             ),
             SizedBox(height: 40),
             Text(
-              'Make karman Better',
+              localizations.makeKarmanBetter,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -72,7 +75,7 @@ class MorePage extends StatelessWidget {
             SizedBox(height: 16),
             _buildNavigationTile(
               context,
-              'Contribute on GitHub',
+              localizations.contributeGitHub,
               CupertinoIcons.cube_box,
               () => Navigator.push(
                 context,
@@ -84,7 +87,7 @@ class MorePage extends StatelessWidget {
             SizedBox(height: 16),
             _buildNavigationTile(
               context,
-              'Join the Community',
+              localizations.joinCommunity,
               CupertinoIcons.group,
               () => Navigator.push(
                 context,
@@ -96,7 +99,7 @@ class MorePage extends StatelessWidget {
             SizedBox(height: 16),
             _buildNavigationTile(
               context,
-              'Support the Project',
+              localizations.supportProject,
               CupertinoIcons.heart,
               () => Navigator.push(
                 context,
@@ -107,7 +110,7 @@ class MorePage extends StatelessWidget {
             ),
             SizedBox(height: 40),
             Text(
-              'Help',
+              localizations.help,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -117,7 +120,7 @@ class MorePage extends StatelessWidget {
             SizedBox(height: 16),
             _buildNavigationTile(
               context,
-              'Repeat Tutorial',
+              localizations.repeatTutorial,
               CupertinoIcons.refresh,
               () => showTutorialOptions(context),
             ),

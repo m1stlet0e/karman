@@ -3,6 +3,7 @@ import 'package:karman_app/constants/habit_badge_constants.dart';
 import 'package:karman_app/controllers/habit_controller.dart';
 import 'package:karman_app/services/badges/habit_badge_service.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitBadgesPage extends StatelessWidget {
   const HabitBadgesPage({super.key});
@@ -16,7 +17,7 @@ class HabitBadgesPage extends StatelessWidget {
           color: CupertinoColors.white,
           onPressed: () => Navigator.of(context).pop(),
         ),
-        middle: Text('Habit Badges'),
+        middle: Text(AppLocalizations.of(context)!.habitBadges),
       ),
       child: SafeArea(
         child: Consumer<HabitController>(

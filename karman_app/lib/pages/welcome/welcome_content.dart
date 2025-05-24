@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class WelcomePageContent {
-  final String title;
+  final String Function(BuildContext) title;
   final String lottieAsset;
-  final String description;
+  final String Function(BuildContext) description;
 
   WelcomePageContent({
     required this.title,
@@ -10,20 +13,20 @@ class WelcomePageContent {
   });
 }
 
-List<WelcomePageContent> welcomePages = [
+List<WelcomePageContent> getWelcomePages() => [
   WelcomePageContent(
-    title: "Organize Your Day",
+    title: (context) => AppLocalizations.of(context)!.organizeYourDay,
     lottieAsset: "lib/assets/lottie/tasks.json",
-    description: "Organize, prioritize, and accomplish your tasks with ease.",
+    description: (context) => AppLocalizations.of(context)!.organizeDayDescription,
   ),
   WelcomePageContent(
-    title: "Build Good Habits",
+    title: (context) => AppLocalizations.of(context)!.buildGoodHabits,
     lottieAsset: "lib/assets/lottie/habits.json",
-    description: "Develop and maintain positive habits for personal growth.",
+    description: (context) => AppLocalizations.of(context)!.buildHabitsDescription,
   ),
   WelcomePageContent(
-    title: "Stay Focused",
+    title: (context) => AppLocalizations.of(context)!.stayFocused,
     lottieAsset: "lib/assets/lottie/focus.json",
-    description: "Enhance your productivity with our focus timer.",
+    description: (context) => AppLocalizations.of(context)!.stayFocusedDescription,
   ),
 ];

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitReminder extends StatefulWidget {
   final bool isEnabled;
@@ -95,7 +96,7 @@ class _HabitReminderState extends State<HabitReminder>
             },
             child: Text(
               widget.time == null
-                  ? 'Set daily reminder'
+                  ? AppLocalizations.of(context)!.setDailyReminder
                   : _formatTime(widget.time!),
               style: TextStyle(
                 color: widget.isEnabled
@@ -144,7 +145,7 @@ class _HabitReminderState extends State<HabitReminder>
           ),
           CupertinoButton(
             child: Text(
-              'Done',
+              AppLocalizations.of(context)!.done,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: CupertinoColors.white,

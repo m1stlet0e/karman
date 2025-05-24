@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskNote extends StatelessWidget {
   final TextEditingController controller;
@@ -7,7 +8,7 @@ class TaskNote extends StatelessWidget {
   const TaskNote({
     super.key,
     required this.controller,
-    this.hintText = 'Add a note...',
+    this.hintText = '',
   });
 
   @override
@@ -20,7 +21,7 @@ class TaskNote extends StatelessWidget {
       child: CupertinoTextField(
         controller: controller,
         style: TextStyle(color: CupertinoColors.white),
-        placeholder: hintText,
+        placeholder: hintText.isEmpty ? AppLocalizations.of(context)!.noteHint : hintText,
         placeholderStyle: TextStyle(color: CupertinoColors.systemGrey),
         maxLines: null,
         keyboardType: TextInputType.multiline,

@@ -1,25 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'tutorial_overlay.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FocusTutorial {
-  static List<TutorialPage> pages = [
-    TutorialPage(
-      instruction: 'Drag to set time',
-      imageAsset: 'lib/assets/tutorials/focus/set_time.png',
-    ),
-    TutorialPage(
-      instruction: 'Tap play to start timer',
-      imageAsset: 'lib/assets/tutorials/focus/start_timer.png',
-    ),
-    TutorialPage(
-      instruction: 'Listen to relaxing sounds',
-      imageAsset: 'lib/assets/tutorials/focus/relaxing_sounds.png',
-    ),
-  ];
+  static List<TutorialPage> getPages(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    return [
+      TutorialPage(
+        instruction: localizations.dragToSetTime,
+        imageAsset: 'lib/assets/tutorials/focus/set_time.png',
+      ),
+      TutorialPage(
+        instruction: localizations.tapPlayToStart,
+        imageAsset: 'lib/assets/tutorials/focus/start_timer.png',
+      ),
+      TutorialPage(
+        instruction: localizations.listenToRelaxingSounds,
+        imageAsset: 'lib/assets/tutorials/focus/relaxing_sounds.png',
+      ),
+    ];
+  }
 
   static Widget build(BuildContext context, VoidCallback onComplete) {
     return TutorialOverlay(
-      pages: pages,
+      pages: getPages(context),
       onComplete: onComplete,
     );
   }

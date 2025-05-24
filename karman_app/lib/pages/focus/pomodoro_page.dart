@@ -9,6 +9,7 @@ import 'package:karman_app/components/focus/rolling_menu.dart';
 import 'package:karman_app/app_state.dart';
 import 'package:karman_app/pages/tutorial/pomodoro_tutorial.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PomodoroPage extends StatefulWidget {
   const PomodoroPage({super.key});
@@ -95,15 +96,16 @@ class PomodoroPageState extends State<PomodoroPage>
       return true;
     }
 
+    final localizations = AppLocalizations.of(context)!;
     bool? exitConfirmed = await showCupertinoDialog<bool>(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: Text('Exit Pomodoro Session?'),
+        title: Text(localizations.exitPomodoroSession),
         content:
-            Text('Are you sure you want to exit the active Pomodoro session?'),
+            Text(localizations.exitPomodoroConfirm),
         actions: <Widget>[
           CupertinoDialogAction(
-            child: Text('Cancel'),
+            child: Text(localizations.cancel),
             onPressed: () => Navigator.of(context).pop(false),
           ),
           CupertinoDialogAction(
@@ -112,7 +114,7 @@ class PomodoroPageState extends State<PomodoroPage>
               controller.stopTimer(countSession: false);
               Navigator.of(context).pop(true);
             },
-            child: Text('Exit'),
+            child: Text(localizations.exit),
           ),
         ],
       ),
@@ -133,7 +135,7 @@ class PomodoroPageState extends State<PomodoroPage>
               navigationBar: CupertinoNavigationBar(
                 backgroundColor: CupertinoColors.black,
                 border: null,
-                middle: Text('Pomodoro Timer',
+                middle: Text(AppLocalizations.of(context)!.pomodoroTimer,
                     style: TextStyle(color: CupertinoColors.white)),
                 leading: CupertinoButton(
                   padding: EdgeInsets.zero,

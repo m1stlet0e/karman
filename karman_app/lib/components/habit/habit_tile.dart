@@ -7,6 +7,7 @@ import 'package:karman_app/models/habits/habit.dart';
 import 'package:karman_app/pages/habit/habit_completion_sheet.dart';
 import 'package:karman_app/pages/habit/habit_details_sheet.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitTile extends StatelessWidget {
   final Habit habit;
@@ -18,6 +19,8 @@ class HabitTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return Material(
       color: Colors.transparent,
       child: Slidable(
@@ -30,7 +33,7 @@ class HabitTile extends StatelessWidget {
               backgroundColor: CupertinoColors.darkBackgroundGray,
               foregroundColor: CupertinoColors.systemRed,
               icon: CupertinoIcons.delete,
-              label: 'Delete',
+              label: localizations.delete,
             ),
           ],
         ),
@@ -171,10 +174,11 @@ class HabitTile extends StatelessWidget {
   }
 
   void _showDeleteConfirmation(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     showCupertinoDialog(
       context: context,
       builder: (BuildContext context) => DeleteConfirmationDialog(
-        itemName: 'habit',
+        itemName: localizations.habit,
         onDelete: () => _deleteHabit(context),
       ),
     );

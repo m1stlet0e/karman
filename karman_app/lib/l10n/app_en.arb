@@ -1,0 +1,308 @@
+{
+  "@@locale": "en",
+  
+  "appTitle": "Karman",
+  
+  "habits": "Habits",
+  "tasks": "Tasks",
+  "focus": "Focus",
+  "more": "More",
+  
+  "noTasksLeft": "No tasks left",
+  "tasksLeft": "{count} task{count, plural, =1{} other{s}} left",
+  "@tasksLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "clear": "Clear",
+  "save": "Save",
+  "edit": "Edit",
+  "add": "Add",
+  "done": "Done",
+  "ok": "OK",
+  
+  "clearCompletedTasks": "Clear Completed Tasks?",
+  "deleteConfirmation": "Delete {item}?",
+  "@deleteConfirmation": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "taskName": "Task Name",
+  "taskNote": "Note",
+  "dueDate": "Due Date",
+  "reminder": "Reminder",
+  "priority": "Priority",
+  "high": "High",
+  "medium": "Medium",
+  "low": "Low",
+  "none": "None",
+  
+  "habitName": "Habit Name",
+  "streak": "Streak",
+  "currentStreak": "Current Streak",
+  "longestStreak": "Longest Streak",
+  "totalCompletions": "Total Completions",
+  
+  "focusTimer": "Focus Timer",
+  "pomodoroTimer": "Pomodoro Timer",
+  "minutes": "Minutes",
+  "seconds": "Seconds",
+  "start": "Start",
+  "pause": "Pause",
+  "resume": "Resume",
+  "stop": "Stop",
+  "reset": "Reset",
+  
+  "workTime": "Work Time",
+  "shortBreak": "Short Break",
+  "longBreak": "Long Break",
+  "sessions": "Sessions",
+  
+  "settings": "Settings",
+  "about": "About",
+  "version": "Version",
+  "support": "Support",
+  "tutorial": "Tutorial",
+  "badges": "Badges",
+  
+  "welcomeTitle": "Welcome to Karman",
+  "welcomeDescription": "Your productivity companion",
+  "getStarted": "Get Started",
+  
+  "createNewTask": "Create New Task",
+  "editTask": "Edit Task",
+  "createNewHabit": "Create New Habit",
+  "editHabit": "Edit Habit",
+  
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "thisWeek": "This Week",
+  "nextWeek": "Next Week",
+  
+  "overdue": "Overdue",
+  "completed": "Completed",
+  "pending": "Pending",
+  
+  "sounds": "Sounds",
+  "rain": "Rain",
+  "forest": "Forest",
+  "ocean": "Ocean",
+  "night": "Night",
+  "airplane": "Airplane",
+  
+  "notification": "Notification",
+  "reminderSet": "Reminder set",
+  "taskCompleted": "Task completed",
+  "habitCompleted": "Habit completed",
+  
+  "firstLaunchWelcome": "Welcome to your first time using Karman!",
+  "swipeToDelete": "Swipe left to delete",
+  "tapToEdit": "Tap to edit details",
+  "completeTask": "Tap to complete task",
+  "addNewTask": "Tap + to add new task",
+  
+  "noHabitsLeft": "No habits left",
+  "habitsLeft": "{count} habit{count, plural, =1{} other{s}} left",
+  "@habitsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noHabitsYet": "No habits yet. Add one to get started!",
+  
+  "achievements": "Achievements",
+  "makeKarmanBetter": "Make karman Better",
+  "help": "Help",
+  
+  "contributeGitHub": "Contribute on GitHub",
+  "joinCommunity": "Join the Community",
+  "supportProject": "Support the Project",
+  "repeatTutorial": "Repeat Tutorial",
+  
+  "deleteItemQuestion": "Delete {item}?",
+  "@deleteItemQuestion": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteItemWarning": "Are you sure you want to delete this {item}? This action cannot be undone.",
+  "@deleteItemWarning": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "habit": "habit",
+  "task": "task",
+  
+  "toDoReminder": "To-Do Reminder",
+  
+  "welcomeToKarman": "Welcome to karman",
+  "letsRock": "Let's rock!",
+  "organizeYourDay": "Organize Your Day",
+  "organizeDayDescription": "Organize, prioritize, and accomplish your tasks with ease.",
+  "buildGoodHabits": "Build Good Habits",
+  "buildHabitsDescription": "Develop and maintain positive habits for personal growth.",
+  "stayFocused": "Stay Focused",
+  "stayFocusedDescription": "Enhance your productivity with our focus timer.",
+  "openSource": "Open Source",
+  "openSourceDescription": "karman is an open-source productivity app. Contribute and make it better!",
+  
+  "noteHint": "Note...",
+  
+  "dontBreakStreak": "Don't break your streak!",
+  "streakReminder": "Your {habitName} streak is at {streakCount} days. Complete it now to keep it going!",
+  "@streakReminder": {
+    "placeholders": {
+      "habitName": {
+        "type": "String"
+      },
+      "streakCount": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "firstFocus": "First Focus",
+  "firstFocusDesc": "Complete a 10-minutes focus session",
+  "halfHourHero": "Half-Hour Hero", 
+  "halfHourHeroDesc": "Complete a 30-minute focus session",
+  "hourHero": "Hour Hero",
+  "hourHeroDesc": "Complete a 60-minute focus session",
+  "productivityPro": "Productivity Pro",
+  "productivityProDesc": "Complete a 90-minute focus session",
+  "centurion": "Centurion",
+  "centurionDesc": "Complete a 100-minute focus session",
+  "twoHourTriumph": "Two-Hour Triumph",
+  "twoHourTriumphDesc": "Complete a 120-minute focus session",
+  "dailyDynamo": "Daily Dynamo",
+  "dailyDynamoDesc": "Complete a 150-minute focus session",
+  "focusFiend": "Focus Fiend",
+  "focusFiendDesc": "Complete 30 minutes of focused work for 3 consecutive days",
+  "consistencyChampion": "Consistency Champion",
+  "consistencyChampionDesc": "Complete 60 minutes of focused work for 7 consecutive days",
+  "weeklyWarrior": "Weekly Warrior",
+  "weeklyWarriorDesc": "Complete 90 minutes of focused work for 7 consecutive days",
+  "monthlyMilestone": "Monthly Milestone",
+  "monthlyMilestoneDesc": "Average 60 minutes of focused work per day for a full month",
+  "focusFanatic": "Focus Fanatic",
+  
+  "habitStarter": "Habit Starter",
+  "consistencyBeginner": "Consistency Beginner",
+  "weekWarrior": "Week Warrior",
+  "fortnightFinisher": "Fortnight Finisher",
+  "monthlyMaster": "Monthly Master",
+  "quarterlyQueen": "Quarterly Queen",
+  "habitCenturion": "Habit Centurion",
+  "yearlyYield": "Yearly Yield",
+  "habitCollector": "Habit Collector",
+  "habitEnthusiast": "Habit Enthusiast",
+  "perfectWeek": "Perfect Week",
+  "perfectMonth": "Perfect Month",
+  
+  "focusTime": "Focus Time",
+  "timeToConcentrate": "Time to concentrate!",
+  "letsGetProductive": "Let's get productive!",
+  "focusOnTask": "Focus on your task now.",
+  "youreDoingGreat": "You're doing great, keep going!",
+  "stayInZone": "Stay in the zone!",
+  
+  "breakTime": "Break Time",
+  "takeQuickBreather": "Take a quick breather.",
+  "stretchAndRelax": "Stretch and relax for a bit.",
+  "timeForShortBreak": "Time for a short break!",
+  "rechargeForNext": "Recharge for the next round.",
+  "stepAwayMoment": "Step away for a moment.",
+  
+  "pomodoroComplete": "Pomodoro Complete",
+  "greatWorkCompleted": "Great work! You've completed your session.",
+  "wellDoneFocused": "Well done on staying focused!",
+  "youveCrushedIt": "You've crushed it! Time for a longer break.",
+  "awesomeJobTakePride": "Awesome job! Take pride in your productivity.",
+  "sessionCompleteProud": "Session complete. You should feel proud!",
+  
+  "stayFocusedStayStrong": "Stay focused, stay strong.",
+  "oneTaskAtTime": "One task at a time.",
+  "embraceProcess": "Embrace the process.",
+  "smallStepsBigResults": "Small steps, big results.",
+  "concentrateOnMatters": "Concentrate on what matters.",
+  "progressOverPerfection": "Progress over perfection.",
+  "futureSelfThankYou": "Your future self will thank you.",
+  "distractionIsEnemy": "Distraction is the enemy of progress.",
+  "stayPresentProductive": "Stay present, stay productive.",
+  "youveGotThis": "You've got this!",
+  
+  "thisSpaceCravesIdeas": "This space craves your brilliant ideas. Add one!",
+  "letsDoIt": "Let's do it!",
+  "viewLogs": "View Logs",
+  "best": "Best",
+  
+  "exitPomodoroSession": "Exit Pomodoro Session?",
+  "exitPomodoroConfirm": "Are you sure you want to exit the active Pomodoro session?",
+  "exit": "Exit",
+  
+  "selectTutorial": "Select a tutorial",
+  "whichTutorialRevisit": "Which tutorial would you like to revisit?",
+  "learnManageTasks": "Learn to manage your daily tasks",
+  "discoverBuildHabits": "Discover how to build lasting habits",
+  "masterConcentration": "Master the art of concentration",
+  "learnPomodoroTechnique": "Learn to use the Pomodoro technique",
+  "pomodoroTimer": "Pomodoro Timer",
+  
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High",
+  "dueDate": "Due Date",
+  "reminder": "Reminder",
+  "setDailyReminder": "Set daily reminder",
+  "habitBadges": "Habit Badges",
+  "focusBadges": "Focus Badges",
+  "swipeToComplete": "Swipe to complete",
+  "logOptional": "Log (Optional):",
+  "enterLogHere": "Enter your log here...",
+  
+  "logs": "Logs",
+  "error": "Error",
+  "noLogsAvailable": "No logs available",
+  "completed": "Completed",
+  
+  "createNewHabits": "Create new habits",
+  "tapCircleToComplete": "Tap the circle to complete",
+  "logDailyRoutine": "Log your daily routine",
+  "swipeRightToComplete": "Swipe right to complete habit",
+  "viewCurrentStreak": "View current streak at a glance",
+  "tapHabitToViewDetails": "Tap the habit to view details",
+  "swipeLeftToDelete": "Swipe left to delete",
+  
+  "createNewTasks": "Create new tasks",
+  "accomplishYourTasks": "Accomplish your tasks",
+  "setPriorityReminders": "Set priority, reminders and due dates",
+  "clearAllCompleted": "Clear all completed tasks at once",
+  "swipeTaskLeftToDelete": "Swipe a task to the left to delete it",
+  
+  "dragToSetTime": "Drag to set time",
+  "tapPlayToStart": "Tap play to start timer",
+  "listenToRelaxingSounds": "Listen to relaxing sounds",
+  
+  "setFocusBreakDurations": "Set your focus and break durations",
+  "startPomodoroSession": "Start your Pomodoro session",
+  "trackYourSession": "Track your session",
+  
+  "item": "item"
+} 

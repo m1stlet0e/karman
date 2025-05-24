@@ -6,6 +6,7 @@ import 'package:karman_app/models/habits/habit.dart';
 import 'package:karman_app/pages/habit/habit_logs_page.dart';
 import 'package:karman_app/services/notifications/notification_service.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitDetailsSheet extends StatefulWidget {
   final Habit habit;
@@ -117,7 +118,7 @@ class HabitDetailsSheetState extends State<HabitDetailsSheet> {
 
     NotificationService.scheduleNotification(
       id: habit.habitId!,
-      title: 'Let\'s do it!',
+      title: AppLocalizations.of(context)!.letsDoIt,
       body: habit.habitName,
       scheduledDate: scheduledDate,
       payload: 'habit_${habit.habitId}',
@@ -190,7 +191,7 @@ class HabitDetailsSheetState extends State<HabitDetailsSheet> {
                   : CupertinoColors.white,
               fontSize: 20,
             ),
-            placeholder: 'Habit Name',
+            placeholder: AppLocalizations.of(context)!.habitName,
             placeholderStyle: TextStyle(
               color: CupertinoColors.systemGrey,
               fontSize: 20,
@@ -203,7 +204,7 @@ class HabitDetailsSheetState extends State<HabitDetailsSheet> {
           padding: EdgeInsets.zero,
           onPressed: _hasChanges && !_isHabitNameEmpty ? _saveChanges : null,
           child: Text(
-            'Save',
+            AppLocalizations.of(context)!.save,
             style: TextStyle(
               color: _hasChanges && !_isHabitNameEmpty
                   ? CupertinoColors.white
@@ -223,7 +224,7 @@ class HabitDetailsSheetState extends State<HabitDetailsSheet> {
         Icon(CupertinoIcons.flame, color: CupertinoColors.white),
         SizedBox(width: 10),
         Text(
-          'Best: ${widget.habit.bestStreak}',
+          '${AppLocalizations.of(context)!.best}: ${widget.habit.bestStreak}',
           style: TextStyle(color: CupertinoColors.white, fontSize: 18),
         ),
       ],
@@ -239,12 +240,12 @@ class HabitDetailsSheetState extends State<HabitDetailsSheet> {
           ),
         );
       },
-      child: const Row(
+      child: Row(
         children: [
           Icon(CupertinoIcons.doc_text, color: CupertinoColors.white),
           SizedBox(width: 10),
           Text(
-            'View Logs',
+            AppLocalizations.of(context)!.viewLogs,
             style: TextStyle(color: CupertinoColors.white, fontSize: 18),
           ),
           Spacer(),

@@ -5,6 +5,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:karman_app/app_shell.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -73,7 +74,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                     controller: _pageController,
                     onPageChanged: (index) {
                       setState(() {
-                        _isLastPage = index == welcomePages.length + 1;
+                        _isLastPage = index == getWelcomePages().length + 1;
                         if (_isLastPage) {
                           _animationController.forward();
                         } else {
@@ -83,7 +84,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                     },
                     children: [
                       _buildWelcomePage(constraints),
-                      ...welcomePages.map(
+                      ...getWelcomePages().map(
                           (content) => _buildFeaturePage(content, constraints)),
                       _buildFinalPage(constraints),
                     ],
@@ -126,8 +127,8 @@ class WelcomeScreenState extends State<WelcomeScreen>
                                   ),
                                   Opacity(
                                     opacity: _textOpacityAnimation.value,
-                                    child: const Text(
-                                      "Let's rock!",
+                                    child: Text(
+                                      AppLocalizations.of(context)!.letsRock,
                                       style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
@@ -144,7 +145,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
                       const SizedBox(height: 20),
                       SmoothPageIndicator(
                         controller: _pageController,
-                        count: welcomePages.length + 2,
+                        count: getWelcomePages().length + 2,
                         effect: const WormEffect(
                           dotColor: CupertinoColors.systemGrey,
                           activeDotColor: CupertinoColors.white,
@@ -171,8 +172,8 @@ class WelcomeScreenState extends State<WelcomeScreen>
         Image.asset('lib/assets/images/icon/iOS/icon.png',
             height: constraints.maxHeight * 0.2),
         SizedBox(height: constraints.maxHeight * 0.05),
-        const Text(
-          'Welcome to karman',
+        Text(
+          AppLocalizations.of(context)!.welcomeToKarman,
           style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -189,7 +190,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
       children: [
         SizedBox(height: constraints.maxHeight * 0.1),
         Text(
-          content.title,
+          content.title(context),
           style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -207,8 +208,8 @@ class WelcomeScreenState extends State<WelcomeScreen>
         SizedBox(height: constraints.maxHeight * 0.05),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: Text(
-            content.description,
+          child:           Text(
+            content.description(context),
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 20,
@@ -226,8 +227,8 @@ class WelcomeScreenState extends State<WelcomeScreen>
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(height: constraints.maxHeight * 0.1),
-        const Text(
-          'Open Source',
+        Text(
+          AppLocalizations.of(context)!.openSource,
           style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -242,10 +243,10 @@ class WelcomeScreenState extends State<WelcomeScreen>
           ),
         ),
         SizedBox(height: constraints.maxHeight * 0.05),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Text(
-            'karman is an open-source productivity app. Contribute and make it better!',
+            AppLocalizations.of(context)!.openSourceDescription,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20,

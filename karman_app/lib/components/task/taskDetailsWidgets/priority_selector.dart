@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PrioritySelector extends StatelessWidget {
   final int selectedPriority;
@@ -16,15 +17,17 @@ class PrioritySelector extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _buildPriorityOption(1, CupertinoColors.activeGreen),
-        _buildPriorityOption(2, CupertinoColors.systemYellow),
-        _buildPriorityOption(3, CupertinoColors.systemRed),
+        _buildPriorityOption(1, CupertinoColors.activeGreen, context),
+        _buildPriorityOption(2, CupertinoColors.systemYellow, context),
+        _buildPriorityOption(3, CupertinoColors.systemRed, context),
       ],
     );
   }
 
-  Widget _buildPriorityOption(int priority, Color color) {
+  Widget _buildPriorityOption(int priority, Color color, BuildContext context) {
     bool isSelected = selectedPriority == priority;
+    final localizations = AppLocalizations.of(context)!;
+    
     return GestureDetector(
       onTap: () => onPriorityChanged(priority),
       child: Column(
@@ -50,7 +53,7 @@ class PrioritySelector extends StatelessWidget {
           ),
           SizedBox(height: 5),
           Text(
-            priority == 1 ? 'Low' : (priority == 2 ? 'Medium' : 'High'),
+            priority == 1 ? localizations.low : (priority == 2 ? localizations.medium : localizations.high),
             style: TextStyle(
               color: Colors.white,
               fontSize: 12,

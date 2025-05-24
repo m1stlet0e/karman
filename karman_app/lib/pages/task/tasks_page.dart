@@ -7,6 +7,7 @@ import 'package:karman_app/components/task/taskPageWidgets/task_list.dart';
 import 'package:karman_app/pages/tutorial/task_tutorial.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TasksPage extends StatefulWidget {
   const TasksPage({super.key});
@@ -114,13 +115,14 @@ class TasksPageState extends State<TasksPage> with TickerProviderStateMixin {
   }
 
   void _clearCompletedTasks() {
+    final localizations = AppLocalizations.of(context)!;
     showCupertinoDialog(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
-        title: Text('Clear Completed Tasks?'),
+        title: Text(localizations.clearCompletedTasks),
         actions: <CupertinoDialogAction>[
           CupertinoDialogAction(
-            child: Text('Cancel'),
+            child: Text(localizations.cancel),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -131,7 +133,7 @@ class TasksPageState extends State<TasksPage> with TickerProviderStateMixin {
               Navigator.of(context).pop();
               context.read<TaskController>().clearCompletedTasks();
             },
-            child: Text('Clear'),
+            child: Text(localizations.clear),
           ),
         ],
       ),
@@ -140,6 +142,8 @@ class TasksPageState extends State<TasksPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return Consumer<TaskController>(
       builder: (context, taskController, child) {
         _sortTasks(taskController.tasks, taskController);
@@ -174,8 +178,8 @@ class TasksPageState extends State<TasksPage> with TickerProviderStateMixin {
                 ),
                 middle: Text(
                   incompleteTasks == 0
-                      ? 'No tasks left'
-                      : '$incompleteTasks task${incompleteTasks == 1 ? '' : 's'} left',
+                      ? localizations.noTasksLeft
+                      : localizations.tasksLeft(incompleteTasks),
                   style: TextStyle(
                     color: CupertinoColors.white,
                     fontWeight: FontWeight.bold,

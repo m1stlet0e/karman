@@ -3,6 +3,7 @@ import 'package:karman_app/models/habits/habit.dart';
 import 'package:karman_app/controllers/habit_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:slide_to_act/slide_to_act.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HabitCompletionSheet extends StatefulWidget {
   final Habit habit;
@@ -90,7 +91,7 @@ class _HabitCompletionSheetState extends State<HabitCompletionSheet>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Log (Optional):',
+          AppLocalizations.of(context)!.logOptional,
           style: TextStyle(color: CupertinoColors.white, fontSize: 16),
         ),
         SizedBox(height: 8),
@@ -104,7 +105,7 @@ class _HabitCompletionSheetState extends State<HabitCompletionSheet>
             style: TextStyle(color: CupertinoColors.white),
             maxLines: null,
             keyboardType: TextInputType.multiline,
-            placeholder: 'Enter your log here...',
+            placeholder: AppLocalizations.of(context)!.enterLogHere,
             placeholderStyle: TextStyle(color: CupertinoColors.systemGrey),
             decoration: BoxDecoration(
               border: Border.all(color: CupertinoColors.transparent),
@@ -123,7 +124,7 @@ class _HabitCompletionSheetState extends State<HabitCompletionSheet>
       sliderButtonIcon: GlowingArrow(animation: _animation),
       sliderRotate: false,
       elevation: 0,
-      text: '\t\t\t\t\t\t Swipe to complete',
+      text: '\t\t\t\t\t\t ${AppLocalizations.of(context)!.swipeToComplete}',
       textStyle: TextStyle(
         color: CupertinoColors.white,
         fontSize: 22,

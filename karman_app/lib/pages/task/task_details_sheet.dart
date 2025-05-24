@@ -161,7 +161,6 @@ class TaskDetailsSheetState extends State<TaskDetailsSheet> {
                 SizedBox(height: 20),
                 TaskNote(
                   controller: _noteController,
-                  hintText: 'Note...',
                 ),
                 SizedBox(height: 30),
                 TaskOptionsSection(

@@ -5,6 +5,7 @@ import 'package:karman_app/models/task/task.dart';
 import 'package:karman_app/controllers/task_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskTile extends StatefulWidget {
   final Task task;
@@ -47,6 +48,8 @@ class TaskTileState extends State<TaskTile> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
     return Consumer<TaskController>(
       builder: (context, taskController, child) {
         bool isPendingCompletion =
@@ -65,7 +68,7 @@ class TaskTileState extends State<TaskTile> {
                   backgroundColor: CupertinoColors.darkBackgroundGray,
                   foregroundColor: CupertinoColors.systemRed,
                   icon: CupertinoIcons.delete,
-                  label: 'Delete',
+                  label: localizations.delete,
                 ),
               ],
             ),
